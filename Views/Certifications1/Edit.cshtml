@@ -1,0 +1,139 @@
+﻿@model OtherServices2.Models.Certification
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Certification</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdCertification" />
+            <div class="form-group">
+                <label asp-for="NoContract" class="control-label"></label>
+                <input asp-for="NoContract" class="form-control" />
+                <span asp-validation-for="NoContract" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ContractNumber" class="control-label"></label>
+                <input asp-for="ContractNumber" class="form-control" />
+                <span asp-validation-for="ContractNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DocIdentContrator" class="control-label"></label>
+                <input asp-for="DocIdentContrator" class="form-control" />
+                <span asp-validation-for="DocIdentContrator" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MobilePhone" class="control-label"></label>
+                <input asp-for="MobilePhone" class="form-control" />
+                <span asp-validation-for="MobilePhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypeContract" class="control-label"></label>
+                <input asp-for="TypeContract" class="form-control" />
+                <span asp-validation-for="TypeContract" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateSuscripcion" class="control-label"></label>
+                <input asp-for="DateSuscripcion" class="form-control" />
+                <span asp-validation-for="DateSuscripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Object" class="control-label"></label>
+                <input asp-for="Object" class="form-control" />
+                <span asp-validation-for="Object" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValueInicial" class="control-label"></label>
+                <input asp-for="ValueInicial" class="form-control" />
+                <span asp-validation-for="ValueInicial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValueAddictionNo1" class="control-label"></label>
+                <input asp-for="ValueAddictionNo1" class="form-control" />
+                <span asp-validation-for="ValueAddictionNo1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ModificatorioReduccionNo1" class="control-label"></label>
+                <input asp-for="ModificatorioReduccionNo1" class="form-control" />
+                <span asp-validation-for="ModificatorioReduccionNo1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValueAaddictionNo2" class="control-label"></label>
+                <input asp-for="ValueAaddictionNo2" class="form-control" />
+                <span asp-validation-for="ValueAaddictionNo2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValueAddictionNo3" class="control-label"></label>
+                <input asp-for="ValueAddictionNo3" class="form-control" />
+                <span asp-validation-for="ValueAddictionNo3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValueFinalContract" class="control-label"></label>
+                <input asp-for="ValueFinalContract" class="form-control" />
+                <span asp-validation-for="ValueFinalContract" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InitialTerm" class="control-label"></label>
+                <input asp-for="InitialTerm" class="form-control" />
+                <span asp-validation-for="InitialTerm" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExtensionTerm" class="control-label"></label>
+                <input asp-for="ExtensionTerm" class="form-control" />
+                <span asp-validation-for="ExtensionTerm" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FinalTerm" class="control-label"></label>
+                <input asp-for="FinalTerm" class="form-control" />
+                <span asp-validation-for="FinalTerm" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StateContract" class="control-label"></label>
+                <input asp-for="StateContract" class="form-control" />
+                <span asp-validation-for="StateContract" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DocIdentSupervisor" class="control-label"></label>
+                <input asp-for="DocIdentSupervisor" class="form-control" />
+                <span asp-validation-for="DocIdentSupervisor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IssueDate" class="control-label"></label>
+                <input asp-for="IssueDate" class="form-control" />
+                <span asp-validation-for="IssueDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

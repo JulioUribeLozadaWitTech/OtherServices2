@@ -1,0 +1,57 @@
+﻿@model OtherServices2.Models3.Grado
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<br />
+<h4 class="pt-5 ps-2 mt-0 mb-5 border-start border-1">Agregar Grado</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FuerzaMilitar" class="control-label">Fuerza Militar</label>
+                <select name="FuerzaMilitar" class="form-control bg-grisa">
+                    <option value="EJERCITO">EJERCITO</option>
+                    <option value="ARMADA">ARMADA</option>
+                    <option value="FUERZA AEREA">FUERZA ÁEREA</option>
+                </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="TipoPlanta" class="control-label">Tipo Planta</label>
+                <input asp-for="TipoPlanta" class="form-control bg-grisa" />
+                <span asp-validation-for="TipoPlanta" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="Grado1" class="control-label">Grado</label>
+                <input asp-for="Grado1" class="form-control bg-grisa" />
+                <span asp-validation-for="Grado1" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <button type="submit" class="btn btn-primario mt-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="me-2 border-end-2 bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path class="p-3" fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                    </svg>GUARDAR
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="col-3 pt-5">
+    <div class="btn-toolbar" role="toolbar">
+        <div class="btn-group">
+            <a class="regresar me-3" asp-action="Index">&#60;&#60; Regresar</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<OtherServices2.Models2.Cupo>
+
+@{
+
+}
+
+@if (ViewData["MensajeError"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewData["MensajeError"]
+    </div>
+}
+<div class="d-flex justify-content-between">
+    <h1 class="pt-5 ps-2 mt-0 mb-5 border-start border-1">Cupos</h1>
+    <p>
+        <a class="btn btn-primario mt-5" asp-action="Create">+ Agregar</a>
+    </p>
+</div>
+<table class="cell-border table table-striped table-hover" id="example">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Area)
+            </th>
+            <th>
+                N° de Parqueadero
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Area)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NoCupoArea)
+                </td>
+                <td>
+                    <a title="Eliminar" asp-action="Eliminar" onclick="return confirm('¿Desea eliminar este registro?')" asp-controller="Cupoes" asp-route-id="@item.IdCupo"><img src="~/images/ico-accion-eliminar.png" /></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $('#example').DataTable({
+            'pageLength': 6,
+            language: {
+                "url": "https://cdn.datatables.net/plug-ins/1.13.1/i18n/es-ES.json"
+            }
+        });
+    });
+</script>

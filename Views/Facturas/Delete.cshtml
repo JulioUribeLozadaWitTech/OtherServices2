@@ -1,0 +1,191 @@
+﻿@model OtherServices2.Borrar.Factura
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Eliminar</title>
+</head>
+<body>
+
+    <h3>Esta seguro que desea Eliminar el registro?</h3>
+    <div>
+        <h4>Factura</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.PrefijoFactura)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PrefijoFactura)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.NoFactura)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NoFactura)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CodConvenio)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CodConvenio)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.NombreConvenio)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NombreConvenio)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Concepto)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Concepto)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Direccion)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Direccion)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Movil)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Movil)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.TipoIdentTercero)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.TipoIdentTercero)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DocIdentTercero)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DocIdentTercero)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.NombreTercero)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NombreTercero)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Fecha)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Fecha)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.FechaVence)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.FechaVence)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.FechaRegistro)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.FechaRegistro)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.FechaAnulacion)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.FechaAnulacion)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.UsuarioRegistro)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.UsuarioRegistro)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.UsuarioAnulacion)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.UsuarioAnulacion)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.VrDcto)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.VrDcto)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.VrFactura)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.VrFactura)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Observacion)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Observacion)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.EstadoFact)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.EstadoFact)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DatoResolNum)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DatoResolNum)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ContactEmail)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ContactEmail)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ContactName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ContactName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ContactPhone)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ContactPhone)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Cufe)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Cufe)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CufeImage)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CufeImage)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CufeDateEmail)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CufeDateEmail)
+            </dd>
+        </dl>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="DocUnicoFact" />
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            <a asp-action="Index">Back to List</a>
+        </form>
+    </div>
+</body>
+</html>

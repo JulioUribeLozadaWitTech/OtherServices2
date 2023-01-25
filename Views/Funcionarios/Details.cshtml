@@ -1,0 +1,105 @@
+﻿@model OtherServices2.Models2.Funcionario
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <h4 class="pt-5 ps-2 mt-0 mb-1 border-start border-1">Detalle Funcionario</h4>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+<br />
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Tipo de Documento
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TipoIdentTercero)
+        </dd>
+        <dt class="col-sm-2">
+            No. Documento
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DocIdentTercero)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Genero)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Genero)
+        </dd>
+        <dt class="col-sm-2">
+            Primer Nombre
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PrimerNombre)
+        </dd>
+        <dt class="col-sm-2">
+            Segundo Nombre
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SegundoNombre)
+        </dd>
+        <dt class="col-sm-2">
+            Primer Apellido
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PrimerApellido)
+        </dd>
+        <dt class="col-sm-2">
+            Segundo Apellido
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SegundoApellido)
+        </dd>
+        <dt class="col-sm-2">
+            Correo electrónico
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CorreoCorporativo)
+        </dd>
+        <dt class="col-sm-2">
+            Teléfono
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TelefonoDomicilio)
+        </dd>
+        <dt class="col-sm-2">
+            Teléfono Alterno
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TelefonoAlterno)
+        </dd>
+        <dt class="col-sm-2">
+            Dirección
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DireccionDomicilio)
+        </dd>
+        <dt class="col-sm-2">
+            Barrio
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BarrioDomicilio)
+        </dd>
+        <dt class="col-sm-2">
+            Tipo Vinculación
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Vinculacion)
+        </dd>
+    </dl>
+</div>
+<div class="col-3 pt-5">
+    <div class="btn-toolbar" role="toolbar">
+        <div class="btn-group">
+            <a class="regresar me-3" asp-action="Index">&#60;&#60; Regresar</a>
+        </div>
+    </div>
+</div>

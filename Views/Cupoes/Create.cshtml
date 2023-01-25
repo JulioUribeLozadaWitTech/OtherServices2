@@ -1,0 +1,45 @@
+﻿@model OtherServices2.Models2.Cupo
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4 class="pt-5 ps-2 mt-0 mb-5 border-start border-1">Agregar Cupo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Area" class="control-label ">Area</label>
+                <select name="Area" class="form-control bg-grisa">
+                    <option value="CIRCUNVALAR">CIRCUNVALAR</option>
+                    <option value="OCCIDENTAL">OCCIDENTAL</option>
+                    <option value="PUBLICO">PUBLICO</option>
+                </select>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="NoCupoArea" class="control-label ">No de Parqueadero</label>
+                <input asp-for="NoCupoArea" class="form-control bg-grisa" />
+                <span asp-validation-for="NoCupoArea" class="text-danger"></span>
+            </div>
+            <br />
+            <br />
+            <div class="form-group">
+                <button type="submit" class="btn btn-primario mt-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="me-2 border-end-2 bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path class="p-3" fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                    </svg>GUARDAR
+                </button>
+            </div>
+        </form>
+        <br />
+        <a class="regresar" asp-action="Index"> &#60;&#60; Regresar </a>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

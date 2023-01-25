@@ -1,0 +1,140 @@
+﻿@model OtherServices2.Borrar.Factura
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <h1 class="pt-5 ps-2 mt-0 mb-5 border-start border-1">
+                Recaudo
+            </h1>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+<br />
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            Factura N°
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NoFactura)
+        </dd>
+        <dt class="col-sm-2">
+            Fecha
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FechaRegistro)
+        </dd>
+        <dt class="col-sm-2">
+            Tipo de Documento
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TipoIdentTercero)
+        </dd>
+        <dt class="col-sm-2">
+            Nombre de Tercero
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NombreTercero)
+        </dd>
+        <dt class="col-sm-2">
+            No Documento
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DocIdentTercero)
+        </dd>
+        <dt class="col-sm-2">
+            Dirección
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+        <dt class="col-sm-2">
+            Correo Electrónico
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ContactEmail)
+        </dd>
+        <dt class="col-sm-2">
+            Teléfono
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Movil)
+        </dd>
+    </dl>
+</div>
+<hr />
+<div class="row">
+    <dl class="col">
+        <dt class="col-sm-2">
+            Cantidad
+        </dt>
+    </dl>
+    <dl class="col">
+        <dt class="col-sm-2">
+            Descripción
+        </dt>
+    </dl>
+    <dl class="col">
+        <dt class="col-sm-2">
+            V/r
+        </dt>
+    </dl>
+</div>
+<hr />
+<div class="row">
+    <div class="col">
+        @foreach (var item in Model.FacturaDets)
+        {
+            @item.Cant
+        }
+    </div>
+    <div class="col">
+        @foreach (var item in Model.FacturaDets)
+        {
+            @item.Descripcion
+        }
+    </div>
+    <div class="col">
+        @foreach (var item in Model.FacturaDets)
+        {
+            @item.VrItem
+        }
+    </div>
+</div>
+<br />
+<br />
+<br />
+<div class="row">
+    <dl class="col">
+        <dt class="col-sm-2">
+            Medio de Pago
+        </dt>
+    </dl>
+</div>
+<div class="row">
+    <div class="col">
+        @foreach (var item in Model.FacturaDets)
+        {
+            @item.MedioPago
+        }
+    </div>
+</div>
+<hr />
+<dl>
+    <dt>
+        RESOLUCION DE FACTURACION No.
+    </dt>
+</dl>
+<div class="col-3 pt-5">
+    <div class="btn-toolbar" role="toolbar">
+        <div class="btn-group">
+            <a class="regresar" asp-action="Index">&#60;&#60; Regresar</a>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,60 @@
+﻿@model OtherServices2.Models2.VigenciaCupo
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div>
+    <h4>Eliminar</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            ID Cupo
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdCupo)
+        </dd>
+        <dt class="col-sm-2">
+            Documento
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DocIdentTerceroNavigation.DocIdentTercero)
+        </dd>
+        <dt class="col-sm-2">
+            Fecha Desde
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FechaDesde)
+        </dd>
+        <dt class="col-sm-2">
+            Fecha Hasta
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FechaHasta)
+        </dd>
+        <dt class="col-sm-2">
+            Jornada
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Jornada)
+        </dd>
+        <dt class="col-sm-2">
+            Placa
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Placa)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdCupo" />
+        <input type="hidden" asp-for="IdVigencia" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <div class="col-3 pt-5">
+            <div class="btn-toolbar" role="toolbar">
+                <div class="btn-group">
+                    <a class="regresar me-3" asp-action="Index">&#60;&#60; Regresar</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

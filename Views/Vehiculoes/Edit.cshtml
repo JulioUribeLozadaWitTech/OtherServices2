@@ -1,0 +1,62 @@
+﻿@model OtherServices2.Models2.Vehiculo
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h4>Editar Vehiculo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdVehiculo" />
+            <div class="form-group">
+                <label asp-for="Tipo" class="control-label"></label>
+                <select name="Tipo" class="form-control bg-grisa">
+                    <option value="Auto">Auto</option>
+                    <option value="Moto">Moto</option>
+                    <option value="Bicicleta">Bicicleta</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Placa" class="control-label"></label>
+                <input asp-for="Placa" class="form-control bg-grisa" />
+                <span asp-validation-for="Placa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Color" class="control-label"></label>
+                <input asp-for="Color" class="form-control bg-grisa" />
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Linea" class="control-label"></label>
+                <input asp-for="Linea" class="form-control bg-grisa" />
+                <span asp-validation-for="Linea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Marca" class="control-label"></label>
+                <input asp-for="Marca" class="form-control bg-grisa" />
+                <span asp-validation-for="Marca" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <button type="submit" class="btn btn-primario mt-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="me-2 border-end-2 bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path class="p-3" fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                    </svg>GUARDAR
+                </button>
+            </div>
+            <a class="regresar" asp-action=""> &#60;&#60; Regresar </a>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

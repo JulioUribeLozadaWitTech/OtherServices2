@@ -1,0 +1,123 @@
+﻿@model OtherServices2.Models2.Vehiculo
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@if (ViewData["MensajeError"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewData["MensajeError"]
+    </div>
+}
+
+<br />
+<h4 class="pt-5 ps-2 mt-0 mb-5 border-start border-1">Agregar Vehículo</h4>
+<hr />
+<div class="container">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col">
+                <label asp-for="DocIdentTercero" class="control-label">Documento</label>
+                <input asp-for="DocIdentTercero" class="form-control bg-grisa" />
+                <span asp-validation-for="DocIdentTercero" class="text-danger"></span>
+            </div>
+            <br />
+            <br />
+            <div class="col">
+                <label class="control-label">Primer Nombre</label>
+                <input id="Prueba" class="form-control bg-grisa" type="text" disabled />
+            </div>
+            <br />
+            <div class="col">
+                <label class="control-label">Segundo Nombre</label>
+                <input id="Prueba2" class="form-control bg-grisa" type="text" disabled />
+            </div>
+            <br />
+            <div class="col">
+                <label class="control-label">Primer Apellido</label>
+                <input id="Prueba3" class="form-control bg-grisa" type="text" disabled />
+            </div>
+            <div class="col">
+                <label class="control-label">Segundo Apellido</label>
+                <input id="Prueba4" class="form-control bg-grisa" type="text" disabled />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                <label asp-for="Tipo" class="control-label"></label>
+                <select name="Tipo" class="form-control bg-grisa">
+                    <option value="Auto">Auto</option>
+                    <option value="Moto">Moto</option>
+                    <option value="Bicicleta">Bicicleta</option>
+                </select>
+            </div>
+            <div class="col">
+                <label asp-for="Placa" class="control-label"></label>
+                <input type="text" maxlength="10" asp-for="Placa" class="form-control bg-grisa" />
+                <span asp-validation-for="Placa" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="Color" class="control-label"></label>
+                <input type="text" maxlength="20" asp-for="Color" class="form-control bg-grisa" />
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                <label asp-for="Linea" class="control-label"></label>
+                <input type="text" maxlength="20" asp-for="Linea" class="form-control bg-grisa" />
+                <span asp-validation-for="Linea" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="Marca" class="control-label">Marca</label>
+                <input type="text" maxlength="20" asp-for="Marca" class="form-control bg-grisa" />
+                <span asp-validation-for="Marca" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <button type="submit" class="btn btn-primario mt-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="me-2 border-end-2 bi bi-plus-lg" viewBox="0 0 16 16">
+                    <path class="p-3" fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                </svg>GUARDAR
+            </button>
+        </div>
+    </form>
+    <div class="col-3 pt-5">
+        <div class="btn-toolbar" role="toolbar">
+            <div class="btn-group">
+                <a class="regresar me-3" asp-action="Index">&#60;&#60; Regresar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
+
+    <script>
+        document.getElementById("DocIdentTercero").addEventListener("blur", async function () {
+            let responseFuncionario = await $.ajax({
+                //url: `/BillOtherServices/Vehiculoes/DetailsFuncionario?id=${document.getElementById("DocIdentTercero").value}`,
+                url: `../Vehiculoes/DetailsFuncionario?id=${document.getElementById("DocIdentTercero").value}`,
+                type: "GET",
+                dataType: 'json',
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8"
+                }
+            });
+            if (responseFuncionario) {
+                document.getElementById("Prueba").value = responseFuncionario.primerNombre;
+                document.getElementById("Prueba2").value = responseFuncionario.segundoNombre;
+                document.getElementById("Prueba3").value = responseFuncionario.primerApellido;
+                document.getElementById("Prueba4").value = responseFuncionario.segundoApellido;
+            }
+        });
+    </script>

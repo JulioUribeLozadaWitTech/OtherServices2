@@ -1,0 +1,152 @@
+﻿@model OtherServices2.Models.Tercero
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div>
+    <h4 class="pt-5 ps-2 mt-0 mb-5 border-start border-1">Eliminar Tercero</h4>
+    <hr />
+    <div>
+        <div class="row">
+            <div class="col-sm-6">
+                <dl class="row">
+                    <dt class="col-sm-4">
+                        Primer Apellido
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.PrimerApellido)
+                    </dd>
+                    <dt class="col-sm-4">
+                        Segundo Apellido
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.SegundoApellido)
+                    </dd>
+                </dl>
+            </div>
+            <div class="col-sm-6">
+                <dl class="row">
+                    <dt class="col-sm-4">
+                        Primer Nombre
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.PrimerNombre)
+                    </dd>
+                    <dt class="col-sm-4">
+                        Segundo Nombre
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.SegundoNombre)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <dl class="row">
+                    <dt class="col-sm-4">
+                        Tipo de Identidad
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.TipoIdentTerceroNavigation.TipoIdentTercero1)
+                    </dd>
+                    <dt class="col-sm-4">
+                        Documento
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.DocUnicoTercero)
+                    </dd>
+                </dl>
+            </div>
+            <div class="col-sm-6">
+                <dl class="row">
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.UsuarioRegistro)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.UsuarioRegistro)
+                    </dd>
+
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.FechaRegistro)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.FechaRegistro)
+                    </dd>
+                </dl>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <dl class="row">
+                    <dt class="col-sm-4">
+                        Barrio Domicilio
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.BarrioDomicilio)
+                    </dd>
+                    <dt class="col-sm-4">
+                        Direccion Domicilio
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.DireccionDomicilio)
+                    </dd>
+                </dl>
+            </div>
+            <div class="col-sm-6">
+                <dl class="row">
+                    <dt class="col-sm-4">
+                        Telefono Alterno
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.TelefonoAlterno)
+                    </dd>
+                    <dt class="col-sm-4">
+                        Telefono Domicilio
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.TelefonoDomicilio)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <dl class="row">
+                    <dt class="col-sm-4">
+                        @Html.DisplayNameFor(model => model.Genero)
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.Genero)
+                    </dd>
+
+                    <dt class="col-sm-4">
+                        Correo Personal
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.CorreoPersonal)
+                    </dd>
+                </dl>
+            </div>
+            <div class="col-sm-6">
+                <dl class="row">
+                </dl>
+            </div>
+        </div>
+        <dl class="row">
+        </dl>
+    </div>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="DocIdentTercero" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <div class="col-3 pt-5">
+            <div class="btn-toolbar" role="toolbar">
+                <div class="btn-group">
+                    <a class="regresar me-3" asp-action="Index">&#60;&#60; Regresar</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

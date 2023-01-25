@@ -1,0 +1,147 @@
+﻿@model OtherServices2.Models2.ServicePortal
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<br />
+<h4 class="pt-5 ps-2 mt-0 mb-5 border-start border-1">Agregar</h4>
+<hr />
+<div class="container">
+    <form asp-action="Create" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col">
+                <label asp-for="ServiceName" class="control-label">Nombre del Servicio</label>
+                <input asp-for="ServiceName" class="form-control bg-grisa" />
+                <span asp-validation-for="ServiceName" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="ServiceDescription" class="control-label">Descripción del servicio</label>
+                <input asp-for="ServiceDescription" class="form-control bg-grisa" />
+                <span asp-validation-for="ServiceDescription" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="TypeProcedure" class="control-label">Tipo Procedimiento</label>
+                <input asp-for="TypeProcedure" class="form-control bg-grisa" />
+                <span asp-validation-for="TypeProcedure" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="TypeProcedureThumb" class="control-label">Tipo Proce. Thumb</label>
+                <input asp-for="TypeProcedureThumb" class="form-control bg-grisa" />
+                <span asp-validation-for="TypeProcedureThumb" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                <label asp-for="Cost" class="control-label">Costo</label>
+                <input asp-for="Cost" class="form-control bg-grisa" />
+                <span asp-validation-for="Cost" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="TypeCostThumb" class="control-label">Tipo Costo Thumb</label>
+                <input asp-for="TypeCostThumb" class="form-control bg-grisa" />
+                <span asp-validation-for="TypeCostThumb" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="TimeMinute" class="control-label">Hora Minuto</label>
+                <input asp-for="TimeMinute" class="form-control bg-grisa" />
+                <span asp-validation-for="TimeMinute" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="TypeTimeThumb" class="control-label">Tipo Hora Thumb</label>
+                <input asp-for="TypeTimeThumb" class="form-control bg-grisa" />
+                <span asp-validation-for="TypeTimeThumb" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                <label asp-for="WhenToDo" class="control-label">Cuándo Hacer</label>
+                <input asp-for="WhenToDo" class="form-control bg-grisa" />
+                <span asp-validation-for="WhenToDo" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="WhenToDoThumb" class="control-label">Cuándo Hacer Thumb</label>
+                <input asp-for="WhenToDoThumb" class="form-control bg-grisa" />
+                <span asp-validation-for="WhenToDoThumb" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="Parameter" class="control-label">Parámetro</label>
+                <input asp-for="Parameter" class="form-control bg-grisa" />
+                <span asp-validation-for="Parameter" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="LoginRequired" class="control-label">Req. Inicia Sesión</label>
+                <input asp-for="LoginRequired" class="form-control bg-grisa" />
+                <span asp-validation-for="LoginRequired" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                <label asp-for="Href" class="control-label"></label>
+                <input asp-for="Href" class="form-control bg-grisa" />
+                <span asp-validation-for="Href" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="OrderList" class="control-label">Lista de orden</label>
+                <input asp-for="OrderList" class="form-control bg-grisa" />
+                <span asp-validation-for="OrderList" class="text-danger"></span>
+            </div>
+            <div class="col"></div>
+            <div class="col"></div>
+        </div>
+        <br />
+        <div>
+            <input accept="image/svg" type="file" name="Imagen" id="Imagen" />
+        </div>
+        <br />
+        <div>
+            <img id="ImagenPng" width="200" height="200" />
+        </div>
+        <br />
+        <div class="form-group">
+            <button type="submit" class="btn btn-primario mt-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="me-2 border-end-2 bi bi-plus-lg" viewBox="0 0 16 16">
+                    <path class="p-3" fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                </svg>GUARDAR
+            </button>
+        </div>
+    </form>
+</div>
+
+<div class="col-3 pt-5">
+    <div class="btn-toolbar" role="toolbar">
+        <div class="btn-group">
+            <a class="regresar me-3" asp-action="Index">&#60;&#60; Regresar</a>
+        </div>
+    </div>
+</div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
+
+    <script>
+        let inputFoto = document.getElementById("Imagen");
+        function handleFoto() {
+            let filesList = this.files;
+            if (filesList.length > 0) {
+                let item = filesList[0];
+                function readFoto(event) {
+                    let img = new Image();
+                    let fileImage = event.target.result;
+                    document.getElementById("ImagenPng").src = fileImage;
+                }
+                let readerFoto = new FileReader();
+                readerFoto.addEventListener('load', readFoto);
+                readerFoto.readAsDataURL(item);
+            }
+        }
+        inputFoto.addEventListener("change", handleFoto, false);
+    </script>

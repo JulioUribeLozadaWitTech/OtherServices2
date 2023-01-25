@@ -1,0 +1,175 @@
+﻿@model OtherServices2.Models2.VigenciaCupo
+
+@{
+    ViewData["Title"] = "Create";
+    SelectList AreaList = (SelectList)ViewData["AreaList"];
+    SelectList ServicioList = (SelectList)ViewData["ServicioList"];
+}
+
+<h4 class="pt-5 ps-2 mt-0 mb-5 border-start border-1">Agregar Vigencia Cupo</h4>
+<hr />
+<div class="container">
+    <div>
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <div class="col">
+                    <label asp-for="DocIdentTercero" class="control-label">Documento</label>
+                    <input asp-for="DocIdentTercero" class="form-control bg-grisa" required />
+                    <span asp-validation-for="DocIdentTercero" class="text-danger"></span>
+                </div>
+                <br />
+                <br />
+                <div class="col">
+                    <label class="control-label">Primer Nombre</label>
+                    <input id="Prueba" class="form-control" type="text" placeholder="Primer Nombre" disabled />
+                </div>
+                <br />
+                <div class="col">
+                    <label class="control-label">Segundo Nombre</label>
+                    <input id="Prueba2" class="form-control" type="text" placeholder="Primer Nombre" disabled />
+                </div>
+                <br />
+                <div class="col">
+                    <label class="control-label">Primer Apellido</label>
+                    <input id="Prueba3" class="form-control" type="text" placeholder="Primer Nombre" disabled />
+                </div>
+                <br />
+                <div class="col">
+                    <label class="control-label">Segundo Apellido</label>
+                    <input id="Prueba4" class="form-control" type="text" placeholder="Primer Nombre" disabled />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <br />
+                <div class="col">
+                    <label class="control-label">Area</label>
+                    <select name="Area" class="form-control bg-grisa" asp-items="AreaList" id="Area">
+                        <option>---</option>
+                    </select>
+                </div>
+                <br />
+                <div class="col">
+                    <label asp-for="IdCupo" class="control-label">No Parqueadero</label>
+                    <select asp-for="IdCupo" name="IdCupo" id="IdCupo" class="form-control bg-grisa"></select>
+                </div>
+                <div class="col">
+                    <label class="control-label">Servicio</label>
+                    <select asp-for="IdService" name="IdService" class="form-control bg-grisa" asp-items="ServicioList" id="IdService">
+                        <option>---</option>
+                    </select>
+                </div>
+                <br />
+                <div class="col">
+                    <label asp-for="Jornada" class="control-label"></label>
+                    <select name="Jornada" class="form-control bg-grisa">
+                        <option value="MAÑANA">MAÑANA</option>
+                        <option value="TARDE">TARDE</option>
+                        <option value="NOCHE">NOCHE</option>
+                    </select>
+                </div>
+                <br />
+                <div class="col">
+                    <label asp-for="TipoVehiculo" class="control-labe">Tipo Vehiculo</label>
+                    <select name="TipoVehiculo" class="form-control bg-grisa">
+                        <option value="Auto">Auto</option>
+                        <option value="Moto">Moto</option>
+                        <option value="Bicicleta">Bicicleta</option>
+                    </select>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <br />
+                <div class="col">
+                    <label asp-for="Placa" class="control-label">Placa</label>
+                    <select asp-for="Placa" name="Placa" id="Placa" class="form-control bg-grisa" >
+                    </select>
+                </div>
+                <br />
+                <br />
+                <div class="col">
+                    <label asp-for="FechaDesde" class="control-label">Fecha y Hora Desde</label>
+                    <input asp-for="FechaDesde" class="form-control bg-grisa" />
+                    <span asp-validation-for="FechaDesde" class="text-danger"></span>
+                </div>
+                <br>
+                <div class="col">
+                    <label asp-for="FechaHasta" class="control-label">Fecha y Hora Hasta</label>
+                    <input asp-for="FechaHasta" class="form-control bg-grisa" />
+                    <span asp-validation-for="FechaHasta" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+            <br>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primario mt-5  w-25">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="me-2 border-end-2 bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path class="p-3" fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                    </svg>GUARDAR
+                </button>
+            </div>
+        </form>
+        <div class="col-3 pt-5">
+            <div class="btn-toolbar" role="toolbar">
+                <div class="btn-group">
+                    <a class="regresar me-3" asp-action="Index">&#60;&#60; Regresar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
+
+    <script>
+        document.getElementById("DocIdentTercero").addEventListener("blur", async function () {
+            let responseFuncionario = await $.ajax({
+                //url: `/BillOtherServices/VigenciaCupoes/DetailsFuncionario?id=${document.getElementById("DocIdentTercero").value}`,
+                url: `../VigenciaCupoes/DetailsFuncionario?id=${document.getElementById("DocIdentTercero").value}`,
+                type: "GET",
+                dataType: 'json',
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8"
+                }
+            });
+            if (responseFuncionario) {
+                document.getElementById("Prueba").value = responseFuncionario.primerNombre;
+                document.getElementById("Prueba2").value = responseFuncionario.segundoNombre;
+                document.getElementById("Prueba3").value = responseFuncionario.primerApellido;
+                document.getElementById("Prueba4").value = responseFuncionario.segundoApellido;
+                var html = "";
+                for (let item of responseFuncionario.vehiculos) {
+                    //html += `<option value="${item.placa}">${item.placa}-${item.tipo}</option>`
+                    html += `<option value="${item.placa}">${item.placa}</option>`
+                }
+                document.getElementById("Placa").innerHTML = html
+            }
+        });
+
+        document.getElementById("Area").addEventListener("change", async function () {
+            let responseNoCupos = await $.ajax({
+                //url: `/BillOtherServices/VigenciaCupoes/NumeroCupos?id=${document.getElementById("Area").value}`,
+                url: `../VigenciaCupoes/NumeroCupos?id=${document.getElementById("Area").value}`,
+                type: "GET",
+                dataType: 'json',
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8"
+                }
+            });
+            if (responseNoCupos) {
+                var html = "";
+                for (let item of responseNoCupos) {
+                    html += `<option value="${item.idCupo}">${item.noCupoArea}</option>`
+                }
+                document.getElementById("IdCupo").innerHTML = html
+            }
+        });
+    </script>
+
+

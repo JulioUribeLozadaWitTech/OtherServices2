@@ -1,0 +1,73 @@
+﻿@model IEnumerable<OtherServices2.Borrar.Factura>
+
+@{
+}
+
+<div class="d-flex justify-content-between">
+    <h1 class="pt-5 ps-2 mt-0 mb-5 border-start border-1">Recaudo</h1>
+</div>
+<main>
+    <table class="cell-border table table-striped table-hover" id="example">
+        <thead class="table-dark">
+            <tr>
+                <th>
+                    Detalle Factura
+                </th>
+                <th>
+                    Documento Factura
+                </th>
+                <th>
+                    Fecha
+                </th>
+                <th>
+                    Tipo Identidad
+                </th>
+                <th>
+                    Documento de identidad
+                </th>
+                <th>
+                    Nombre de Cliente
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a class="btn btn-primario" asp-action="Details" asp-route-id="@item.DocUnicoFact">Ver Detalle</a> |
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DocUnicoFact)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TipoIdentTercero)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DocIdentTercero)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombreTercero)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('#example').DataTable({
+                'pageLength': 5,
+                language: {
+                    "url": "https://cdn.datatables.net/plug-ins/1.13.1/i18n/es-ES.json"
+                }
+            });
+        });
+    </script>
+</main>
+

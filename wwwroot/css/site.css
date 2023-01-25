@@ -1,0 +1,197 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    margin: 0px;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/*Estilos Especificos*/
+* {
+    font-family: 'Montserrat';
+}
+
+/* Nav Superior */
+.titulo {
+    font-weight: 300;
+    padding-left: 0.3em;
+    color: #D9D9D9;
+}
+
+.subtitulo {
+    font-size: 1em;
+    font-weight: 200;
+    padding: 1em 0.5em;
+    border-left: 1px solid #D9D9D9;
+    color: #D9D9D9;
+}
+
+.parrafo-titulo {
+    font-size: 1em;
+    font-weight: 300;
+    padding-left: 1em;
+    color: #D9D9D9;
+}
+
+.nav-superior {
+    display: flex;
+    width: 100%;
+    height: 150px;
+    position:fixed;
+    z-index: 1;
+}
+
+.color-nav {
+    width: 2%;
+    background-color: #80A3C1;
+}
+
+.contenido-nav {
+    width: 98%;
+    background-color: #004884;
+    color: white;
+    padding-left: 5%;
+}
+
+/*Barra nav  side bar*/
+.sidebar {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background: #f0f0f0;
+    padding: 50px 20px;
+    z-index: 0;
+    margin-top:150px;
+}
+
+    .sidebar ul li {
+        text-align: left;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        list-style: none;
+        margin-left: -30px;
+        text-decoration:none;
+
+    }
+    .sidebar ul li a {
+        color: #004884;
+        list-style: none;
+        text-decoration: none;
+    }
+
+.first-list {
+    border-bottom: 1px solid #d8d8d8;
+}
+
+footer {
+    background: #d6d6d6;
+    padding: 1em 0;
+    text-align: left;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding-left: 10em;
+    z-index: 1;
+}
+
+/*Contenido / FORMS*/
+
+.main{
+    padding-top:150px;
+    padding-left:60px;
+    padding-bottom:100px;
+}
+
+@media (max-width: 1800px) {
+    .main {
+        padding-left: 250px;
+    }
+}
+h1 {
+    color: #004884;
+}
+
+h4 {
+    color: #004884;
+}
+
+.form-control {
+    border: none;
+    border-radius: 0;
+    padding: 15px;
+}
+
+a {
+    color: #004884;
+}
+
+label {
+    font-size: 14px;
+    color: #666;
+}
+
+/*SCSS*/
+.btn {
+    border-radius: 0;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 15px;
+}
+.btn-primario {
+    background-color: #004884;
+    color: #D9D9D9;
+    text-align: left;
+}
+    .btn-primario:hover {
+        background-color: #00223e;
+        color: #D9D9D9;
+    }
+.bg-grisa {
+    background: #E6EDF3;
+}
+
+/*TABLAS*/
+main table > thead.table-dark {
+    --bs-table-bg: #80A3C1;
+}
+
+main table.table th {
+    font-size: 11px;
+    text-transform: uppercase;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    letter-spacing: 0.5px;
+    border: none;
+    vertical-align: middle;
+}
+
+main tr {
+    border: none;
+}
+
+main tbody td {
+    font-size: 14px;
+    color: #666666;
+    border: none;
+}
+
+main table tbody tr:nth-of-type(2n+1) {
+    background-color: #F5F5F5;
+}
+
+main table > tbody {
+    border-bottom: 1px solid #80A3C1;
+}
+

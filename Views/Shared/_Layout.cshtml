@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - OtherServices2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/OtherServices2.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+</head>
+<body>
+    <header>
+        <nav class="nav-superior">
+            <div class="color-nav">
+                <p> </p>
+            </div>
+            <div class="contenido-nav">
+                <h2 class="subtitulo">HOSPITAL: MILITAR CENTRAL <partial name="_LoginPartial" /></h2>
+                <a asp-area="" asp-controller="Home" asp-action="Index"><h1 class="titulo">Recaudo</h1></a>
+                <p class="parrafo-titulo">Proyecto de innovación Abierta HOMIL 4.0 .</p>
+            </div>
+        </nav>
+        <nav class="sidebar">
+            <ul>
+                                @await Component.InvokeAsync("Menu")
+                
+@*                <li class="first-list">
+                    <a asp-area="" asp-controller="Tercero" asp-action="Index">Terceros</a>
+                </li>
+                <li class="first-list">
+                    <a asp-area="" asp-controller="TipoServicios" asp-action="Index">Tipo de servicios</a>
+                </li>
+                <li class="first-list">
+                    <a asp-area="" asp-controller="GrupoServicios" asp-action="Index">Grupo de servicios</a>
+                </li>
+                <li class="first-list">
+                    <a asp-area="" asp-controller="Servicios" asp-action="Index">Servicios</a>
+                </li>
+                <li class="first-list">
+                    <a asp-area="" asp-controller="Facturas" asp-action="Index">Recaudo</a>
+                </li>
+                <li class="first-list">
+                    <a asp-area="" asp-controller="Cupoes" asp-action="Index">Cupos</a>
+                </li>
+                <li class="first-list">
+                    <a asp-area="" asp-controller="VigenciaCupoes" asp-action="Index">Vigencia Cupos</a>
+                </li>
+                <li class="first-list">
+                    <a asp-area="" asp-controller="Vehiculoes" asp-action="Index">Vehiculo</a>
+                </li>
+                <li class="first-list">
+                    <a asp-area="" asp-controller="Funcionarios" asp-action="Index">Funcionarios</a>
+                </li>
+                <li class="first-list">
+                    <a asp-area="" asp-controller="Certifications1" asp-action="Index">Certificaciones</a>
+                </li>
+                <li class="first-list">
+                    <a asp-area="" asp-controller="ServicePortals" asp-action="Index">Portal Paciente</a>
+                </li>
+                </li>
+                <li class="first-list">
+                    <a asp-area="" asp-controller="Gradoes" asp-action="Index">Grado</a>
+                </li>
+*@            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="main">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="border-top footer text-muted">
+        <div>
+            &copy; 2022 - WIT TECH & SOFTWARE
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+</body>
+</html>
+
+

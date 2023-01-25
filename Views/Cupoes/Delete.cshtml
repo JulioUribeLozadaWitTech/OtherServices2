@@ -1,0 +1,35 @@
+﻿@model OtherServices2.Models2.Cupo
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div>
+    <h4>Eliminar Cupo</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Area)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Area)
+        </dd>
+        <dt class="col-sm-2">
+            No Cupo de Area
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NoCupoArea)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdCupo" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <div class="col-3 pt-5">
+            <div class="btn-toolbar" role="toolbar">
+                <div class="btn-group">
+                    <a class="regresar me-3" asp-action="Index">&#60;&#60; Regresar</a>
+                </div>
+            </div>
+        </div>
+</form>
+</div>

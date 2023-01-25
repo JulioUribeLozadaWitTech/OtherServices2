@@ -1,0 +1,169 @@
+﻿@model OtherServices2.Models.Certification
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4 class="pt-5 ps-2 mt-0 mb-5 border-start border-1">Agregar Certificación</h4>
+<hr />
+<div class="container">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col">
+                <label asp-for="IdCertification" class="control-label">Certificación Id</label>
+                <input asp-for="IdCertification" class="form-control bg-grisa" />
+                <span asp-validation-for="IdCertification" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="NoContract" class="control-label">Contrato No</label>
+                <input asp-for="NoContract" class="form-control bg-grisa" />
+                <span asp-validation-for="NoContract" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="ContractNumber" class="control-label">Número de Contacto</label>
+                <input asp-for="ContractNumber" class="form-control bg-grisa" />
+                <span asp-validation-for="ContractNumber" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="DocIdentContrator" class="control-label">NIT</label>
+                <input asp-for="DocIdentContrator" class="form-control bg-grisa" />
+                <span asp-validation-for="DocIdentContrator" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                <label asp-for="Address" class="control-label">Dirección</label>
+                <input asp-for="Address" class="form-control bg-grisa" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="MobilePhone" class="control-label">Teléfono Móvil</label>
+                <input asp-for="MobilePhone" class="form-control bg-grisa" />
+                <span asp-validation-for="MobilePhone" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="City" class="control-label">Ciudad</label>
+                <input asp-for="City" class="form-control bg-grisa" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="Email" class="control-label">Correo Electrónico</label>
+                <input asp-for="Email" class="form-control bg-grisa" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                <label asp-for="TypeContract" class="control-label">Tipo de Contrato</label>
+                <input asp-for="TypeContract" class="form-control bg-grisa" />
+                <span asp-validation-for="TypeContract" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="DateSuscripcion" class="control-label">Fecha de Suscripción</label>
+                <input asp-for="DateSuscripcion" class="form-control bg-grisa" />
+                <span asp-validation-for="DateSuscripcion" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="Object" class="control-label">Objeto</label>
+                <input asp-for="Object" class="form-control bg-grisa" />
+                <span asp-validation-for="Object" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="ValueInicial" class="control-label">Valor Inicial</label>
+                <input asp-for="ValueInicial" class="form-control bg-grisa" />
+                <span asp-validation-for="ValueInicial" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                <label asp-for="ValueAddictionNo1" class="control-label">Valor Adición Nro. 1</label>
+                <input asp-for="ValueAddictionNo1" class="form-control bg-grisa" />
+                <span asp-validation-for="ValueAddictionNo1" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="ModificatorioReduccionNo1" class="control-label">Modificatorio Reducción Nro. 1</label>
+                <input asp-for="ModificatorioReduccionNo1" class="form-control bg-grisa" />
+                <span asp-validation-for="ModificatorioReduccionNo1" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="ValueAaddictionNo2" class="control-label">Valor Adición Nro. 2</label>
+                <input asp-for="ValueAaddictionNo2" class="form-control bg-grisa" />
+                <span asp-validation-for="ValueAaddictionNo2" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="ValueAddictionNo3" class="control-label">Valor Adición Nro. 3</label>
+                <input asp-for="ValueAddictionNo3" class="form-control bg-grisa" />
+                <span asp-validation-for="ValueAddictionNo3" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                <label asp-for="ValueFinalContract" class="control-label">Valor Total del Contrato</label>
+                <input asp-for="ValueFinalContract" class="form-control bg-grisa" />
+                <span asp-validation-for="ValueFinalContract" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="InitialTerm" class="control-label">Plazo Inicial</label>
+                <input asp-for="InitialTerm" class="form-control bg-grisa" />
+                <span asp-validation-for="InitialTerm" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="ExtensionTerm" class="control-label">Prórroga Nro. 1</label>
+                <input asp-for="ExtensionTerm" class="form-control bg-grisa" />
+                <span asp-validation-for="ExtensionTerm" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="FinalTerm" class="control-label">Plazo Final</label>
+                <input asp-for="FinalTerm" class="form-control bg-grisa" />
+                <span asp-validation-for="FinalTerm" class="text-danger"></span>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col">
+                <label asp-for="StateContract" class="control-label">Estado</label>
+                <input asp-for="StateContract" class="form-control bg-grisa" />
+                <span asp-validation-for="StateContract" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="DocIdentSupervisor" class="control-label">Documento del Supervisor</label>
+                <input asp-for="DocIdentSupervisor" class="form-control bg-grisa" />
+                <span asp-validation-for="DocIdentSupervisor" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="IssueDate" class="control-label">Fecha de Expedición</label>
+                <input asp-for="IssueDate" class="form-control bg-grisa" />
+                <span asp-validation-for="IssueDate" class="text-danger"></span>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primario mt-5  w-25">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="me-2 border-end-2 bi bi-plus-lg" viewBox="0 0 16 16">
+                    <path class="p-3" fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                </svg>GUARDAR
+            </button>
+        </div>
+    </form>
+</div>
+
+<div class="col-3 pt-5">
+    <div class="btn-toolbar" role="toolbar">
+        <div class="btn-group">
+            <a class="regresar me-3" asp-action="Index">&#60;&#60; Regresar</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

@@ -1,0 +1,193 @@
+﻿@model OtherServices2.Models.Certification
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <h4 class="pt-5 ps-2 mt-0 mb-1 border-start border-1">Detalle Certificación</h4>
+        </div>
+        <div class="col-4"></div>
+
+    </div>
+</div>
+<br />
+<div>
+    <hr />
+    <br />
+    <div class="container">
+        <dl class="row">
+            <dt class="col">
+                Contrato No
+            </dt>
+            <dt class="col">
+                Número de Contacto
+            </dt>
+            <dt class="col">
+                NIT
+            </dt>
+            <dt class="col">
+                Dirección
+            </dt>
+        </dl>
+        <dl class="row">
+            <dd class="col">
+                @Html.DisplayFor(model => model.NoContract)
+            </dd>
+            <dd class="col">
+                @Html.DisplayFor(model => model.ContractNumber)
+            </dd>
+            <dd class="col">
+                @Html.DisplayFor(model => model.DocIdentContrator)
+            </dd>
+            <dd class="col">
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+        </dl>
+        <br />
+        <dl class="row">
+            <dt class="col">
+                Teléfono Móvil
+            </dt>
+            <dt class="col">
+                Ciudad
+            </dt>
+            <dt class="col">
+                Correo Electrónico
+            </dt>
+            <dt class="col">
+                Tipo de Contrato
+            </dt>
+        </dl>
+        <dl class="row">
+            <dd class="col">
+                @Html.DisplayFor(model => model.MobilePhone)
+            </dd>
+
+            <dd class="col">
+                @Html.DisplayFor(model => model.City)
+            </dd>
+
+            <dd class="col">
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dd class="col">
+                @Html.DisplayFor(model => model.TypeContract)
+            </dd>
+        </dl>
+        <br />
+        <dl class="row">
+            <dt class="col">
+                Fecha de Suscripción
+            </dt>
+            <dt class="col">
+                Objeto
+            </dt>
+            <dt class="col">
+                Valor Inicial
+            </dt>
+            <dt class="col">
+                Valor Adición Nro. 1
+            </dt>
+        </dl>
+        <dl class="row">
+            <dd class="col">
+                @Html.DisplayFor(model => model.DateSuscripcion)
+            </dd>
+            <dd class="col">
+                @Html.DisplayFor(model => model.Object)
+            </dd>
+            <dd class="col">
+                @Html.DisplayFor(model => model.ValueInicial)
+            </dd>
+            <dd class="col">
+                @Html.DisplayFor(model => model.ValueAddictionNo1)
+            </dd>
+        </dl>
+        <br />
+        <dl class="row">
+            <dt class="col">
+                Modificatorio Reducción Nro. 1
+            </dt>
+            <dt class="col">
+                Valor Adición Nro. 2
+            </dt>
+            <dt class="col">
+                Valor Adición Nro. 3
+            </dt>
+            <dt class="col">
+                Valor Total del Contrato
+            </dt>
+        </dl>
+        <dl class="row">
+            <dd class="col">
+                @Html.DisplayFor(model => model.ModificatorioReduccionNo1)
+            </dd>
+            <dd class="col">
+                @Html.DisplayFor(model => model.ValueAaddictionNo2)
+            </dd>
+            <dd class="col">
+                @Html.DisplayFor(model => model.ValueAddictionNo3)
+            </dd>
+            <dd class="col">
+                @Html.DisplayFor(model => model.ValueFinalContract)
+            </dd>
+        </dl>
+        <br />
+        <dl class="row">
+            <dt class="col">
+                Plazo Inicial
+            </dt>
+            <dt class="col">
+                Prórroga Nro. 1
+            </dt>
+            <dt class="col">
+                Plazo Final
+            </dt>
+            <dt class="col">
+                Estado
+            </dt>
+        </dl>
+        <dl class="row">
+            <dd class="col">
+                @Html.DisplayFor(model => model.InitialTerm)
+            </dd>
+            <dd class="col">
+                @Html.DisplayFor(model => model.ExtensionTerm)
+            </dd>
+            <dd class="col">
+                @Html.DisplayFor(model => model.FinalTerm)
+            </dd>
+            <dd class="col">
+                @Html.DisplayFor(model => model.StateContract)
+            </dd>
+        </dl>
+        <br />
+        <dl class="row">
+            <dt class="col">
+                Documento del Supervisor
+            </dt>
+            <dt class="col">
+                Fecha de Expedición
+            </dt>
+        </dl>
+        <dl class="row">
+            <dd class="col">
+                @Html.DisplayFor(model => model.DocIdentSupervisor)
+            </dd>
+            <dd class="col">
+                @Html.DisplayFor(model => model.IssueDate)
+            </dd>
+        </dl>
+    </div>
+</div>
+<div class="col-3 pt-5">
+    <div class="btn-toolbar" role="toolbar">
+        <div class="btn-group">
+            <a class="regresar" asp-action="Index">&#60;&#60; Regresar</a>
+        </div>
+    </div>
+</div>

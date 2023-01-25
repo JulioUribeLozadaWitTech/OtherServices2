@@ -1,0 +1,53 @@
+﻿@model OtherServices2.Models.TipoServicio
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <h4 class="pt-5 ps-2 mt-0 mb-1 border-start border-1">Eliminar Tipo de Servicio</h4>
+        </div>
+        <div class="col-4"></div>
+
+    </div>
+</div>
+<br />
+<div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-6">
+            <dl class="row">
+                <dt class="col-sm-4">
+                    ID Tipo de Servicio
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.IdTipoServicio)
+                </dd>
+                <dt class="col-sm-4">
+                    Tipo de Servicio
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.TipoServicio1)
+                </dd>
+                <dt class="col-sm-4">
+                    Fecha de Registro
+                </dt>
+                <dd class="col-sm-8">
+                    @Html.DisplayFor(model => model.FechaRegistro)
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdTipoServicio" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" />
+        <div class="col-3 pt-5">
+            <div class="btn-toolbar" role="toolbar">
+                <div class="btn-group">
+                    <a class="regresar me-3" asp-action="Index">&#60;&#60; Regresar</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,98 @@
+﻿@model OtherServices2.Models.Tercero
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h4 class="pt-5 ps-2 mt-0 mb-5 border-start border-1">Editar Tercero</h4>
+<hr />
+<div class="container">
+    <div>
+        <form class="row" asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="DocIdentTercero" />
+            <div class="row">
+                <div class="col-3 me-5 w-20 mb-4">
+                    <label asp-for="UsuarioRegistro" class="control-label mb-2">Usuario Registro</label>
+                    <input asp-for="UsuarioRegistro" class="form-control bg-grisa" />
+                    <span asp-validation-for="UsuarioRegistro" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-3 me-5 w-20 mb-4">
+                <label asp-for="TipoIdentTercero" class="control-label mb-2">Tipo de Documento</label>
+                <select asp-for="TipoIdentTercero" class="form-control bg-grisa" asp-items="ViewBag.TipoIdentTercero"></select>
+                <span asp-validation-for="TipoIdentTercero" class="text-danger"></span>
+            </div>
+            <div class="col-3 me-5 w-20 mb-4">
+                <label asp-for="DocUnicoTercero" class="control-label mb-2">No. Documento</label>
+                <input asp-for="DocUnicoTercero" class="form-control bg-grisa" />
+                <span asp-validation-for="DocUnicoTercero" class="text-danger"></span>
+            </div>
+            <div class="col-2 me-5 w-20 mb-4">
+                <label asp-for="Genero" class="control-label mb-2">Genero</label>
+                <input asp-for="Genero" class="form-control bg-grisa" />
+                <span asp-validation-for="Genero" class="text-danger"></span>
+            </div>
+            <div class="col-2 me-5 w-20 mb-4">
+                <label asp-for="PrimerNombre" class="control-label mb-2">Primer Nombre</label>
+                <input asp-for="PrimerNombre" class="form-control bg-grisa" />
+                <span asp-validation-for="PrimerNombre" class="text-danger"></span>
+            </div>
+            <div class="col-2 me-5 w-20 mb-4">
+                <label asp-for="SegundoNombre" class="control-label mb-2">Segundo Nombre</label>
+                <input asp-for="SegundoNombre" class="form-control bg-grisa" />
+                <span asp-validation-for="SegundoNombre" class="text-danger"></span>
+            </div>
+            <div class="col-2 me-5 w-20 mb-4">
+                <label asp-for="PrimerApellido" class="control-label mb-2">Primer Apellido</label>
+                <input asp-for="PrimerApellido" class="form-control bg-grisa" />
+                <span asp-validation-for="PrimerApellido" class="text-danger"></span>
+            </div>
+            <div class="col-3 me-5 w-20 mb-4">
+                <label asp-for="SegundoApellido" class="control-label mb-2">Segundo Apellido</label>
+                <input asp-for="SegundoApellido" class="form-control bg-grisa" />
+                <span asp-validation-for="SegundoApellido" class="text-danger"></span>
+            </div>
+            <div class="col-3 me-5 w-20 mb-4">
+                <label asp-for="CorreoPersonal" class="control-label mb-2">Correo electrónico</label>
+                <input asp-for="CorreoPersonal" class="form-control bg-grisa" />
+                <span asp-validation-for="CorreoPersonal" class="text-danger"></span>
+            </div>
+            <div class="col-3 me-5 w-20 mb-4">
+                <label asp-for="TelefonoDomicilio" class="control-label mb-2">Teléfono</label>
+                <input asp-for="TelefonoDomicilio" class="form-control bg-grisa" />
+                <span asp-validation-for="TelefonoDomicilio" class="text-danger"></span>
+            </div>
+            <div class="col-3 me-5 w-20 mb-4">
+                <label asp-for="TelefonoAlterno" class="control-label mb-2">Teléfono Alterno</label>
+                <input asp-for="TelefonoAlterno" class="form-control bg-grisa" />
+                <span asp-validation-for="TelefonoAlterno" class="text-danger"></span>
+            </div>
+            <div class="col-3 me-5 w-20 mb-4">
+                <label asp-for="DireccionDomicilio" class="control-label mb-2">Dirección</label>
+                <input asp-for="DireccionDomicilio" class="form-control bg-grisa" />
+                <span asp-validation-for="DireccionDomicilio" class="text-danger"></span>
+            </div>
+            <div class="col-3 me-5 w-20 mb-4">
+                <label asp-for="BarrioDomicilio" class="control-label mb-2">Barrio</label>
+                <input asp-for="BarrioDomicilio" class="form-control bg-grisa" />
+                <span asp-validation-for="BarrioDomicilio" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <button type="submit" class="btn btn-primario mt-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="me-2 border-end-2 bi bi-plus-lg" viewBox="0 0 16 16">
+                        <path class="p-3" fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+                    </svg>GUARDAR
+                </button>
+            </div>
+            <a class="regresar mt-2" asp-action="">&#60;&#60; Regresar</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

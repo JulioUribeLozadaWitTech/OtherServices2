@@ -1,0 +1,95 @@
+﻿@model IEnumerable<OtherServices2.Models2.Funcionario>
+
+@{
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <title>Index</title>
+    <title>@ViewData["Title"] - OtherServices2</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/OtherServices2.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="d-flex justify-content-between">
+        <h1 class="pt-5 ps-2 mt-0 mb-5 border-start border-1">Funcionarios</h1>
+        <p>
+            <a class="btn btn-primario mt-5" asp-action="Create">+ Agregar</a>
+        </p>
+    </div>
+    <table class="cell-border table table-striped table-hover" id="example">
+        <thead class="table-dark">
+            <tr>
+                <th>
+                    Tipo de Documento
+                </th>
+                <th>
+                    Documento
+                </th>
+                <th>
+                    Primer Nombre
+                </th>
+                <th>
+                    Segundo Nombre
+                </th>
+                <th>
+                    Primer Apellido
+                </th>
+                <th>
+                    Segundo Apellido
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TipoIdentTercero)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DocIdentTercero)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PrimerNombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SegundoNombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PrimerApellido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SegundoApellido)
+                    </td>
+                    <td>
+                        <a title="Ver detalle" asp-action="Details" asp-route-id="@item.DocIdentTercero"><img src="~/images/ico-accion-ver.png" /></a> |
+                        <a title="Eliminar" asp-action="Eliminar" onclick="return confirm('¿Desea eliminar este registro?')" asp-controller="Funcionarios" asp-route-id="@item.DocIdentTercero"><img src="~/images/ico-accion-eliminar.png" /></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('#example').DataTable({
+                'pageLength': 5,
+                language: {
+                    "url": "https://cdn.datatables.net/plug-ins/1.13.1/i18n/es-ES.json"
+                }
+            });
+        });
+    </script>
+</body>
+</html>

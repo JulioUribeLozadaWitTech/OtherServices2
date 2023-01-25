@@ -1,0 +1,72 @@
+﻿@model IEnumerable<OtherServices2.Models.GrupoServicio>
+
+@{
+
+}
+
+@if (ViewData["MensajeError"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewData["MensajeError"]
+    </div>
+}
+
+<div class="d-flex justify-content-between">
+    <h1 class="pt-5 ps-2 mt-0 mb-5 border-start border-1">Grupo de Servicios</h1>
+    <p>
+        <a class="btn btn-primario mt-5" asp-action="Create">+ Agregar</a>
+    </p>
+</div>
+<main>
+    <table class="cell-border table table-striped table-hover" id="example">
+        <thead class="table-dark">
+            <tr>
+                <th>
+                    Descripción
+                </th>
+                <th>
+                    Tipo de Servicio
+                </th>
+                <th>
+                    Fecha de Registro
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdTipoServicioNavigation.TipoServicio1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaRegistro)
+                    </td>
+                    <td>
+                        <a title="Editar" asp-action="Edit" asp-route-id="@item.IdGrupo"><img src="~/images/ico-accion-editar.png" /></a> |
+                        <a title="Eliminar" asp-action="Eliminar" onclick="return confirm('¿Desea eliminar este registro?')" asp-controller="GrupoServicios" asp-route-id="@item.IdGrupo"><img src="~/images/ico-accion-eliminar.png" /></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</main>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $('#example').DataTable({
+            'pageLength': 5,
+            language: {
+                "url": "https://cdn.datatables.net/plug-ins/1.13.1/i18n/es-ES.json"
+            }
+        });
+    });
+</script>
+
+
